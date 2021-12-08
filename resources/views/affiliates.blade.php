@@ -17,8 +17,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Lat</th>
-                        <th>Long</th>
                         <th>Distance (from office)</th>
                     </tr>
                 </thead>
@@ -27,8 +25,6 @@
                         <tr>
                             <td>{{ $affiliate->affiliate_id }}</td>
                             <td>{{ $affiliate->name }}</td>
-                            <td>{{ $affiliate->latitude }}</td>
-                            <td>{{ $affiliate->longitude }}</td>
                             <td>{{ $affiliate->distance }} Km</td>
                         </tr>
                     @endforeach
