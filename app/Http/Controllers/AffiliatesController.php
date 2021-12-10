@@ -13,7 +13,7 @@ class AffiliatesController extends BaseController
     public const OFFICE_LAT = 53.3340285;
     public const OFFICE_LON = -6.2535495;
     public const SHOW_ALL = false; // true to show all the records
-    public const SORT_BY = 'affiliate_id'; // can be sorted by affiliate_id|name
+    public const SORT_BY = 'affiliate_id'; // can be sorted by affiliate_id|name|distance
     public const ORDER = 'asc'; // asc|desc
 
     private $affiliates = [];

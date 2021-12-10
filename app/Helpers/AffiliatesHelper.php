@@ -44,12 +44,16 @@ class AffiliatesHelper
         return $distance;
     }
 
-    public static function sortBy($items, $key, $order = 'asc')
+    public static function sortBy($items, $field, $order = 'asc')
     {
         $sorted = [];
 
         foreach ($items as $item) {
-            $sorted[$item->{$key}] = $item;
+            $key = $item->{$field};
+            if (is_numeric($key) && array_key_exists($key, $sorted)) {
+                $key++;
+            }
+            $sorted[$key] = $item;
         }
 
         if ($order === 'asc') {
