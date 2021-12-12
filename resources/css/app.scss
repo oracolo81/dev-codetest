@@ -1,8 +1,4 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    background: #f1f1f1;
-}
+@import '~bootstrap';
 
 .header {
     padding: 30px;
@@ -14,121 +10,9 @@ body {
     }
 }
 
-.items {
-    border-collapse: collapse;
-    width: 100%;
-
-    td, th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-
-    tr {
-        &:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        &:hover {
-            background-color: #ddd;
-        }
-    }
-
-    th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #04AA6D;
-        color: white;
-    }
-}
-
 .footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
     margin-top: 20px;
-}
-
-.error {
-    .text-center {
-        padding-top: 100px;
-        text-align: center;
-    }
-
-    .footer {
-        position: absolute;
-        width: calc(100% - 40px);
-        bottom: 0;
-    }
-}
-
-.pagination {
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    list-style: none;
-    border-radius: 0.25rem;
-}
-
-.page-link {
-    position: relative;
-    display: block;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
-    padding: 0.5rem 0.75rem;
-    line-height: 1.25;
-    color: #007bff;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-
-    &:hover {
-        z-index: 2;
-        //color: $pagination-hover-color;
-        text-decoration: none;
-        //background-color: $pagination-hover-bg;
-        //border-color: $pagination-hover-border-color;
-    }
-
-    &:focus {
-        z-index: 2;
-        //outline: $pagination-focus-outline;
-        //box-shadow: $pagination-focus-box-shadow;
-    }
-}
-
-.page-item {
-    &:first-child {
-        .page-link {
-            margin-left: 0;
-            border-top-left-radius: 0.25rem;
-            border-bottom-left-radius: 0.25rem;
-        }
-    }
-
-    &:last-child {
-        .page-link {
-            border-top-left-radius: 0.25rem;
-            border-bottom-left-radius: 0.25rem;
-        }
-    }
-
-    &.active {
-        .page-link {
-            z-index: 1;
-            //color: $pagination-active-color;
-            //background-color: $pagination-active-bg;
-            //border-color: $pagination-active-border-color;
-        }
-    }
-
-    &.disabled {
-        .page-link {
-            //color: $pagination-disabled-color;
-            pointer-events: none;
-            // Opinionated: remove the "hand" cursor set previously for .page-link
-            cursor: auto;
-            //background-color: $pagination-disabled-bg;
-            //border-color: $pagination-disabled-border-color;
-        }
-    }
 }
