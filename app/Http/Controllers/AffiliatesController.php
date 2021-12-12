@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use App\Helpers\AffiliatesHelper;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Log;
 
 class AffiliatesController extends BaseController
@@ -39,8 +42,16 @@ class AffiliatesController extends BaseController
             }
 
             $this->affiliates = AffiliatesHelper::sortBy($this->affiliates, self::SORT_BY, self::ORDER);
+            $data = $this->paginate($this->affiliates);
         }
 
-        return view('affiliates', ['affiliates' => $this->affiliates]);
+        return view('affiliates', ['affiliates' => $data]);
+    }
+
+    public function paginate($items, $perPage = 10, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
     }
 }

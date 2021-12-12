@@ -12,7 +12,7 @@
             <h1>Affiliate contact records</h1>
         </div>
         <div class="content">
-            <table class="affiliates">
+            <table class="items">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -29,6 +29,11 @@
                         </tr>
                     @endforeach
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">{{ $affiliates->links() }}</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
         <div class="footer">
